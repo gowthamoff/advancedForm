@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="logo">
+            <a href="https://www.wufoo.com/?utm_source=form-header&amp;utm_medium=logo"></a>
+        </div>
+        <header>
+            <h2 class="info">Summer Camp Registration</h2>
+        </header>
+        <form class="formcontainer" onsubmit="return validateForm()" action="submit.html" onkeydown="return handleKeyPress(event);">
+            <hr class="line">
+            <h4 class="normaltext ch-pad">Child Information</h4>
+            <div id="01" class="changecolorcontainer">
+                <label class="boldtext" for="name">Name</label><br>
+                <span class="smallpad"></span>
+                <input type="text" id="firstOne" size="4" onfocus="changeBackground('01')" onblur="changeBack('01')"
+                    >
+                    
+                <input type="text" id="lastOne" size="10" onfocus="changeBackground('01')" onblur="changeBack('01')"
+                    >
+                <br>
+                <label class="smalltext"  >First</label>
+                <label class="smalltext"  ><span class="space1"></span>Last</label>
+            </div>
+            <div id="02" class="changecolorcontainer">
+                <label class="boldtext" for="dob">Birth Date</label> <br>
+                <span class="smallpad"></span>
+                <input class="date-md" type="text" id="day" size="1px" autocomplete="off"
+                oninput="onlyNumbers(this),moveToNextField(this,'month')"   onfocus="changeBackground('02')" onblur="changeBack('02')" minlength="2" maxlength="2">
+                <span>/</span>
+                <input class="date-md" type="text" id="month" size="1px" autocomplete="off"
+                oninput="onlyNumbers(this),moveToNextField(this,'year')"   onfocus="changeBackground('02')" onblur="changeBack('02')" minlength="2" maxlength="2">
+                <span>/</span>
+                <input class="date-y" type="text" id="year" size="4px" autocomplete="off"
+                    onfocus="changeBackground('02')" onblur="changeBack('02')" minlength="4" maxlength="4"><br>
+                    <span class="space6"></span>
+                <label class="smalltext" for="dob">DD</label> <span class="space2"></span>
+                <label class="smalltext" for="dob">MM</label> <span class="space3"></span>
+                <label class="smalltext" for="dob">YYYY</label>
+            </div>
+            <div id="11" class="changecolorcontainer">
+                <label class="boldtext" for="Grade">Grade</label> <br>
+                <span class="smallpad"></span>
+                <select class="selectoption" name="grade" onfocus="changeBackground('11')" onblur="changeBack('11')">
+                    <option>Kindergarden</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+            <div id="03" class="changecolorcontainer">
+                <label class="boldtext" for="school">Name of School</label> <br>
+                <span class="smallpad"></span>
+                <input class="inpwidth" type="text" id="schoolName" size="32px" onfocus="changeBackground('03')"
+                    onblur="changeBack('03')"  >
+            </div>
+            <hr class="line">
+            <h4 class="normaltext">Parent/Guardian Information</h4>
+            <div id="04" class="changecolorcontainer">
+                <label class="boldtext" for="name">Name</label><br>
+                <span class="smallpad"></span>
+                <input type="text" id="firstTwo" size="4" onfocus="changeBackground('04')" onblur="changeBack('04')"
+                     >
+                <input type="text" id="lastTwo" size="10" onfocus="changeBackground('04')" onblur="changeBack('04')"
+                     >
+                <br>
+                <label class="smalltext" for="First">First</label>
+                <label class="smalltext" for="Last"><span class="space1"></span>Last</label>
+            </div>
+            <div id="05" class="changecolorcontainer">
+                <label class="boldtext">Address</label><br>
+                <span class="smallpad"></span>
+                <input id="address01" type="text" class="address1" onfocus="changeBackground('05')" onblur="changeBack('05')" >
+                <br><label class="smalltext" for="stadd">Street Address</label><br><br>
+                <input id="address02" type="text" class="address1" onfocus="changeBackground('05')" onblur="changeBack('05')"
+                     ><br>
+                <label class="smalltext">Address Line 2</label> <br><br>
+                <input id="address03" type="text" class="address2" onfocus="changeBackground('05')" onblur="changeBack('05')" >
+                <span class="pd-r-22"></span>
+                <input id="address04" type="text" class="address2" onfocus="changeBackground('05')" onblur="changeBack('05')" >
+                <label class="smalltext">City
+                    <span class="pd-r-290"></span>
+                    State / Province / Region</label>
+                <br><br>
+                <input id="address05" type="text" class="w46" onfocus="changeBackground('05')" onblur="changeBack('05')" >
+                <span class="pd-r-22"></span>
+                <select class="w47" onfocus="changeBackground('05')" onblur="changeBack('05')" > 
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="England">England</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                </select><br>
+                <label class="smalltext">Postal / Zipcode<span class="pd-r-215"></span>Country</label>
+            </div>
+            <div id="06" class="changecolorcontainer">
+                <label class="boldtext">Phone Number</label><br>
+                <span class="smallDownPadding"></span>
+                <input class="date-md" type="text" id="dob111" size="3" minlength="3" maxlength="3" autocomplete="off"
+                oninput="onlyNumbers(this),moveToNextField(this,'dob222')" onfocus="changeBackground('06')" onblur="changeBack('06')">
+                <span>-</span>
+                <input class="date-md" type="text" id="dob222" size="3" minlength="3" maxlength="3" autocomplete="off"
+                oninput="onlyNumbers(this),moveToNextField(this,'dob333')" onfocus="changeBackground('06')" onblur="changeBack('06')">
+                <span>-</span>
+                <input class="date-y" type="text" id="dob333" size="3" minlength="4" maxlength="4" autocomplete="off"
+                oninput="onlyNumbers(this)" onfocus="changeBackground('06')" onblur="changeBack('06')"><br>
+                <label class="hashstyle">###</label>
+                <span class="sp ace4"></span>
+                <label class="hashstyle">###</label>
+                <span class="space4"></span>
+                <label class="hashstyle">####</label>
+            </div>
+            <div id="07" class="changecolorcontainer">
+                <label class="boldtext">Email</label><br>
+                <span class="smallpad"></span>
+                <input id="email" class="w50" type="text" size="30px" onfocus="changeBackground('07')"
+                    onblur="changeBack('07')" > 
+            </div>
+            <hr class="line">
+            <h4 class="normaltext">Medical Information</h4>
+            <div id="08" class="changecolorcontainer">
+                <label class="boldtext" for="name">Name</label><br>
+                <span class="smallpad"></span>
+                <input type="text" id="firstThree" size="4" onfocus="changeBackground('08')" onblur="changeBack('08')"
+                    >
+                <input type="text" id="lastThree" size="10" onfocus="changeBackground('08')" onblur="changeBack('08')"
+                    >
+                <br>
+                <label class="smalltext" for="First">First</label>
+                <label class="smalltext" for="Last"><span class="space1"></span>Last</label>
+            </div>
+            <div id="09" class="changecolorcontainer">
+                <label class="boldtext">Phone Number</label><br>
+                <span class="smallDownPadding"></span>
+                <input class="date-md" type="text" id="dob1" size="3" minlength="3" maxlength="3" autocomplete="off"
+                oninput="onlyNumbers(this),moveToNextField(this,'dob2')" onfocus="changeBackground('09')" onblur="changeBack('09')">
+                <span>-</span>
+                <input class="date-md" type="text" id="dob2" size="3" minlength="3" maxlength="3" autocomplete="off"
+                oninput="onlyNumbers(this),moveToNextField(this,'dob3')" onfocus="changeBackground('09')" onblur="changeBack('09')">
+                <span>-</span>
+                <input class="date-y" type="text" id="dob3" size="3" minlength="4" maxlength="4" autocomplete="off"
+                oninput="onlyNumbers(this)" onfocus="changeBackground('09')" onblur="changeBack('09')"><br>
+                <label class="hashstyle">###</label>
+                <span class="space4"></span>
+                <label class="hashstyle">###</label>
+                <span class="space4"></span>
+                <label class="hashstyle">####</label>
+            </div>
+            <div id="10" class="changecolorcontainer">
+                <label class="boldtext">Medical Concerns</label><br>
+                <span class="smallpad"></span>
+                <textarea id="textBox" rows="10" cols="40" tabindex="0" class="largebox" onfocus="changeBackground('10')"
+                    onblur="changeBack('10')"  ></textarea>
+            </div> <br> <br>
+           
+            <input type="submit" value="Submit">
+ 
+        </form>
+    </div>
+</body>
+
+</html>
